@@ -1,7 +1,7 @@
 // Program 1
 
 import java.util.Scanner; // import the scanner class from java.util package.
-public class afaq{ // here we define public class afaq
+public class sadiq{ // here we define public class sadiq
     public static void main(String[]args){ // here we define public static method main taking array of string as input.
         Scanner ali= new Scanner(System.in); // create an object Scanner class ali.
         System.out.println("Enter your name and age: ");//print message to enter name and age
