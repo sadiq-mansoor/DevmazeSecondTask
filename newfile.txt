@@ -1,0 +1,111 @@
+// Program 1
+
+import java.util.Scanner; // import the scanner class from java.util package.
+public class afaq{ // here we define public class afaq
+    public static void main(String[]args){ // here we define public static method main taking array of string as input.
+        Scanner ali= new Scanner(System.in); // create an object Scanner class ali.
+        System.out.println("Enter your name and age: ");//print message to enter name and age
+        // reads in user name and age.
+        String name=ali.nextLine();
+        int age=ali.nextInt();
+        //displays result
+        System.out.println("Your name is "+name); 
+        System.out.println("Your age is "+age); 
+    }
+}
+
+
+//Program 2
+
+//This program calculates the user's gross pay
+
+import java.util.Scanner;  	//to be able to read from the keyboard
+
+public class Pay
+{
+	public static void main(String [] args)
+	{
+		//create a Scanner object to read from the keyboard
+		Scanner keyboard = new Scanner(System.in);
+
+		//identifier declarations
+		double hours;	//number of hours worked
+		double rate;	//hourly pay rate
+		double pay;		//gross pay
+
+		//display prompts and get input
+		System.out.print("How many hours did you work? ");
+		hours = keyboard.nextDouble();
+		System.out.print("How much do you get paid per hour? ");
+		rate = keyboard.nextDouble();
+		
+		//calculations
+		if(hours <= 40)
+			pay = hours * rate;
+		else
+			pay = (hours - 40) * (1.5 * rate) + 40 * rate;
+
+		//display results
+		System.out.println("You earned $" + pay);
+	}
+}
+
+
+// Program 3
+
+import java.util.Scanner;
+public class Table { //here is the class named table
+    public static void main(String[] args) {
+        Scanner ahmad =new Scanner(System.in); // here we create new scanner object to read input from user.
+        System.out.println("Enter a number to print its table : "); // print a meassge asking user to enter a number
+        int num=ahmad.nextInt(); // read an int input from the user 
+        for(int i=1;i<=10;i++){ // here we use for loop to iterate numbers from 1 to 10 .
+            System.out.println(num +"x " + i + " = " + num*i); // here we multiply the entered number by the loop variable and print the result.
+        }
+    }
+    }
+
+
+// Program 4
+
+class Student{  // here we define a student class
+int id; 
+String name; 
+public static void main(String args[]){  //creating main method inside class
+Student s1=new Student(); // we create an object names student.
+// Print values of the object.
+System.out.println(s1.id); 
+  System.out.println(s1.name);  
+ }  
+}  
+
+
+// Program 5
+
+
+// Define a Car class
+class Car {
+    private String make;
+
+    // Define a constructor to initialize the make attribute
+    public Car(String make) {
+        this.make = make;
+    }
+
+    // Define a method to retrieve the make attribute
+    public String getMake() {
+        return this.make;
+    }
+}
+
+// Create a Car object and call its method
+class Main {
+    public static void main(String[] args) {
+        // Create a Car object with make "Toyota"
+        Car car1 = new Car("Toyota");
+
+        // Print the make of car1
+        System.out.println("Make: " + car1.getMake());
+    }
+}
+
