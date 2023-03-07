@@ -1,0 +1,238 @@
+//Question-1
+// The following line declares a package named studentdemo
+package studentdemo;
+
+// The StudentDemo class contains the main method that is the entry point of the program
+public class StudentDemo {
+
+    public static void main(String[] args) 
+    {
+        // Create an instance of Student class named s1
+        Student s1 = new Student();
+        // Print the initial values of s1 object using ShowData() method
+        System.out.println("INITIAL VALUES FOR S1 OBJECT");
+        s1.ShowData();
+        
+        // Set the name and marks of s1 object using setValues() method
+        s1.setValues("AHMAD", 86);
+        // Calculate the GPA of s1 object using setGPA() method
+        s1.setGPA();
+        // Print the details of s1 object using ShowData() method
+        System.out.println(s1.Name+"'s DETAILS");
+        s1.ShowData();
+        
+        // Create an instance of Student class named s2 with initial values
+        Student s2 = new Student("XYZ", 10, 1.5f);
+        // Print the initial values of s2 object using ShowData() method
+        System.out.println("INITIAL VALUES FOR S2 OBJECT");
+        s2.ShowData();
+        // Set the name and marks of s2 object using setValues() method
+        s2.setValues("FAISAL", 95);
+        // Calculate the GPA of s2 object using setGPA() method
+        s2.setGPA();
+        // Print the details of s2 object using ShowData() method
+        System.out.println(s2.Name+"'s DETAILS");
+        s2.ShowData();
+        // Set the name of s2 object using setValues() method, without setting the marks
+        s2.setValues("JAMEEL", 70);
+    }
+    
+}
+
+
+//Question-2
+
+// Importing the Scanner class to read input from the user
+package week3;
+import java.util.Scanner;
+
+public class JavaSyntaxDemo {
+    public static void main(String[] args) {
+        // Creating a Scanner object to read input from the user
+        Scanner input = new Scanner(System.in);
+        Scanner input1 = new Scanner(System.in);
+
+        // Declaring variables to hold user input
+        String name;
+        int N, R;
+        boolean flag;
+        char Ch;
+
+        // Using a while loop to keep the program running until the user chooses to stop
+        while (true) {
+            flag = true; // Setting flag to true initially
+
+            // Prompting the user to enter their name
+            System.out.print("Enter your name :");
+            name = input1.nextLine();
+
+            // Prompting the user to enter their programming grade
+            System.out.print("Enter your programming grade : ");
+            Ch = input1.nextLine().charAt(0);
+
+            // Prompting the user to enter a number
+            System.out.println("Hello " + name + " Enter a number : ");
+            N = input.nextInt();
+
+            // Checking if the entered number is prime or not
+            for (int i = 2; i < N; i++) {
+                if (N % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+
+            // Displaying the user's name, programming grade and whether the entered number is prime or not
+            System.out.println("You got " + Ch + " Grade in programing ");
+            if (flag == true) {
+                System.out.println("The number " + N + " is prime ");
+            } else {
+                System.out.println("The number " + N + " is not prime ");
+            }
+
+            // Prompting the user to repeat the program or not
+            System.out.print("Do you want to repeat(1/0) ");
+            R = input.nextInt();
+            if (R == 0) {
+                break;
+            }
+        }
+    }
+}
+
+
+//Question-3
+package lab4;
+
+// Defining a class called Building
+class Building {
+    // Declaring instance variables
+    int floors;
+    double area;
+    int occupants;
+
+    // Defining a method to set the values of the instance variables
+    void set(int no_floors, double area_M, int no_occupants) {
+        floors = no_floors;
+        area = area_M;
+        occupants = no_occupants;
+    }
+
+    // Defining a method to calculate the area per person
+    double areaperperson() {
+        return (area / (floors * 1.0 * occupants)); // Using 1.0 to ensure double division
+    }
+}
+
+// Defining a class called Exercise2
+public class Exercise2 {
+    public static void main(String[] args) {
+        // Creating two Building objects
+        Building office = new Building();
+        Building house = new Building();
+
+        // Setting the values of the instance variables for each Building object
+        office.set(8, 3, 10);
+        house.set(9, 12, 6);
+
+        // Printing the area per person for each Building object
+        System.out.println("The number of area per person in office " + office.areaperperson());
+        System.out.println("The number of area per person in house " + house.areaperperson());
+    }
+}
+
+
+//Question-4
+
+package lab4;
+
+// Defining a class called A
+class A {
+    private int value = 10; // Declaring a private instance variable
+
+    // Defining a method to get the value of the instance variable
+    public int getValue() {
+        return value;
+    }
+
+    // Defining a method to set the value of the instance variable
+    public void setValue(int newValue) {
+        value = newValue;
+    }
+}
+
+// Defining a class called B
+class B {
+    public static void main(String[] args) {
+        A a = new A(); // Creating an object of class A
+        System.out.println(a); // Printing the object
+    }
+}
+
+// Defining a class called C
+class C {
+    public static void main(String[] args) {
+        A a = new A(); // Creating an object of class A
+        a.setValue(33); // Setting the value of the object's instance variable
+        System.out.println(a.getValue()); // Printing the value of the object's instance variable
+    }
+}
+
+
+//Question-5
+
+package studentdemo;
+
+// The Student class represents a student with a name, marks and GPA
+public class Student 
+{
+    // The Name and Marks fields hold the name and marks of the student, respectively
+    public String Name;
+    public int Marks;
+    // The GPA field holds the GPA of the student, and is private to prevent direct access from outside the class
+    private double GPA;
+    
+    // The default constructor sets the initial values of the fields
+    public Student()
+    {
+        Name = "ABC";
+        Marks = 0;
+        GPA = 0.0;
+    }
+    
+    // The parameterized constructor sets the initial values of the fields using the provided arguments
+    public Student(String name, int mark, float gpa)
+    {
+        Name = name;
+        Marks = mark;
+        GPA = gpa;
+    }
+    
+    // The setValues() method sets the name and marks of the student
+    public void setValues(String name, int marks)
+    {
+        Name = name;
+        Marks = marks;
+    }
+    
+    // The setGPA() method calculates the GPA of the student based on their marks and returns the calculated value
+    public double setGPA()
+    {
+        if(Marks > 87)
+        {
+            GPA = 4.0;
+        }
+        else if(Marks >=80 && Marks <=86)
+        {
+            GPA = 3.5;
+        }
+        else
+            GPA = 0.0;
+        
+        return GPA;
+    }
+    
+    // The ShowData() method prints the details of the student, including their name, marks and GPA
+    public void ShowData()
+    {
+        System.out.println("Name :
