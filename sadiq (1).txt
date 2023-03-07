@@ -1,0 +1,197 @@
+//// 1
+
+package studentdemo;
+
+public class StudentDemo {
+
+    public static void main(String[] args) 
+    {
+        Student s1 = new Student();
+        System.out.println("INITIAL VALUES FOR S1 OBJECT");
+        s1.ShowData();
+        
+        
+        s1.setValues("AHMAD", 86);
+        s1.setGPA();
+        System.out.println(s1.Name+"'s DETAILS");
+        s1.ShowData();
+        
+        
+        
+        Student s2 = new Student("XYZ", 10, 1.5f);
+        System.out.println("INITIAL VALUES FOR S2 OBJECT");
+        s2.ShowData();
+        s2.setValues("FAISAL", 95);
+        s2.setGPA();
+        System.out.println(s2.Name+"'s DETAILS");
+        s2.ShowData();
+        s2.setValues("JAMEEL", 70);
+        
+    
+    }
+    
+}
+
+
+//// 2
+
+package studentdemo;
+public class Student 
+{
+    public String Name;
+    public int Marks;
+    private double GPA;
+    
+    public Student()
+    {
+        Name = "ABC";
+        Marks = 0;
+        GPA = 0.0;
+    }
+    
+    public Student(String name, int mark, float gpa)
+    {
+        Name = name;
+        Marks = mark;
+        GPA = gpa;
+        
+    }
+    
+    
+    public void setValues(String name, int marks)
+    {
+        Name = name;
+        Marks = marks;
+    }
+    
+    public double setGPA()
+    {
+        if(Marks > 87)
+        {
+            GPA = 4.0;
+        }
+        else if(Marks >=80 && Marks <=86)
+        {
+            GPA = 3.5;
+        }
+        else
+            GPA = 0.0;
+        
+        return GPA;
+    }
+    
+    
+    public void ShowData()
+    {
+        System.out.println("Name : "+Name);
+        System.out.println("Mark : "+Marks);
+        System.out.println("GPA  : "+GPA);
+    }
+}
+
+//// 3
+
+package week3;
+import java.util.Scanner;
+public class JavaSyntaxDemo
+{
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        Scanner input1=new Scanner(System.in);
+        String name;
+        int N,R;
+        boolean flag;
+        char Ch;
+        while(true)
+        {
+            flag=true;
+        System.out.print("Enter your name :");
+        name=input1.nextLine();
+        System.out.print("Enter your programming grade : ");
+        Ch=input1.nextLine().charAt(0);
+        System.out.println("Hello "+name+" Enter a number : ");
+        N=input.nextInt();
+        
+        for (int i=2 ; i<N ; i++)
+        {
+            if (N%i==0)
+            {
+                flag=false;
+                break;  
+            }
+        }
+        System.out.println("You got "+Ch+" Grade in programing ");
+        if(flag=true)
+            System.out.println("The number "+N+" is prime ");
+        else
+
+            System.out.println("The number "+N+" is not prime ");
+        System.out.print("Do you want to repeat(1/0) ");
+        R=input.nextInt();
+        if(R==0)
+            break;
+    }
+    
+}
+}
+
+
+////4
+
+package lab4;
+class Building
+{
+    int floors;
+    double area;
+    int occupants;
+    void set(int no_floors,double area_M,int no_occupants)
+    {
+        floors = no_floors;
+        area = area_M;
+        occupants = no_occupants;
+    }
+    double areaperperson()
+    {
+        return (area/(floors*1.0*occupants));
+    }
+}
+public class Exercis2 
+{
+     public static void main(String[] args){
+        Building office = new Building();
+        Building house = new Building();
+        office.set(8, 3, 10);
+        house.set(9, 12, 6);
+        System.out.println("The number of area per person in office "+office.areaperperson());
+        System.out.println("The number of area per person in house "+house.areaperperson());
+        
+    }
+}
+
+
+///5
+
+package lab4;
+class A
+{
+    private int value=10;
+    public int getValue()
+    {return value ;}
+    public void setValue(int newValue){value = newValue ;}
+}
+class B{
+    public static void main(String[]args){
+        A a=new A();
+        System.out.println(a);
+    }
+}
+
+class C{
+    public static void main(String[]args){
+        A a=new A();
+        a.setValue(33);
+        System.out.println(a.getValue());
+    }
+}
+
